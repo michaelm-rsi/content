@@ -12,7 +12,9 @@ browser-compat: api.CSSStyleSheet.insertRule
 {{APIRef("CSSOM")}}
 
 The **`CSSStyleSheet.insertRule()`**
-method inserts a new [CSS rule](/en-US/docs/Web/API/CSSRule) into the [current style sheet](/en-US/docs/Web/API/CSSStyleSheet), with some [restrictions](#restrictions).
+method inserts a new [CSS rule](/en-US/docs/Web/API/CSSRule) into the [current style sheet](/en-US/docs/Web/API/CSSStyleSheet).
+
+CSS has some intuitive and not-so-intuitive restrictions affecting where rules can be inserted. There are a number of [exceptions](#exceptions) that will be raised when those rules are violated.
 
 > **Note:** Although `insertRule()` is exclusively a method of
 > {{domxref("CSSStyleSheet")}}, it actually inserts the rule into
@@ -49,7 +51,6 @@ stylesheet.insertRule(rule [, index])
 The newly inserted rule's index within the stylesheet's rule-list.
 
 ### Exceptions
-
 
 - `IndexSizeError` {{domxref("DOMException")}}
   - : Thrown if `index` > `{{domxref("CSSRuleList", "", "", "1")}}.length`.
@@ -189,9 +190,9 @@ To support Internet Explorer 8 and below, use:
 `addRule('pre', 'font: 14px verdana'); // add rule at end`
 
 Also note the non-standard
-[`removeRule()`](http://www.quirksmode.org/dom/w3c_css.html#change)
+[`removeRule()`](https://www.quirksmode.org/dom/w3c_css.html#change)
 and
-[`.rules`](http://www.quirksmode.org/dom/w3c_css.html#access)
+[`.rules`](https://www.quirksmode.org/dom/w3c_css.html#access)
 instead of {{domxref("CSSStyleSheet.deleteRule","deleteRule()")}} and
 {{domxref("CSSStyleSheet",".cssRules")}}, respectively.
 
@@ -199,6 +200,6 @@ instead of {{domxref("CSSStyleSheet.deleteRule","deleteRule()")}} and
 
 - {{domxref("CSSStyleSheet.deleteRule")}}
 - [Cross-Browser
-  CSS-rules ordering (CSS1)](http://www-archive.mozilla.org/docs/web-developer/css1technote/css1tojs.html#priority)
+  CSS-rules ordering (CSS1)](https://www-archive.mozilla.org/docs/web-developer/css1technote/css1tojs.html#priority)
 - [Quirksmode -
-  CSS](http://www.quirksmode.org/dom/w3c_css.html)
+  CSS](https://www.quirksmode.org/dom/w3c_css.html)
